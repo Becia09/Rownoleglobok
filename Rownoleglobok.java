@@ -5,38 +5,30 @@ public class Rownoleglobok
 {
     public static int parserInt(String number, int rangeBegin, int rangeEnd)
     {
-        boolean flag = true;
-        int result = 101; //deklaracja tu ? z jaka wartością ? 101 bo nie mieści się w wymaganiach
+        int result = 101;
 
         try {
             result = Integer.parseInt (number);
         } catch(NumberFormatException e) {
             System.out.println ("Podano nieliczbową wartosc");
             System.exit(0);
-            flag = false;
         }
-        if (flag == true) {
-            if (result < rangeBegin || result > rangeEnd) {
-                System.out.println("Podana wartosc jest za duza lub za mała");
-                System.exit(0);
-                flag = false;
-            }
-        }
-        if (flag == false) {
-            System.out.println("Nic");
+
+        if (result < rangeBegin || result > rangeEnd) {
+            System.out.println("Podana wartosc jest za duza lub za mała");
             System.exit(0);
         }
+
         return result;
     }
     public static void main (String[] args)
     {
         System.out.println ("Podaj dlugosci bokow rownolegloboku i kat: ");
         Scanner scanner = new Scanner(System.in);
-        String str = scanner.nextLine(); //czy dlugosc str > 0
+        String str = scanner.nextLine();
         System.out.println("wczytano: " + str + ".");
         System.out.println("dlugosc str: " + str.length());
 
-        //String tabString[] = new String[3]; //czy są 3 elementy ?
         String tabString[] = str.split(" ");
 
         System.out.println("rozmiar tablicy: " + tabString.length);
