@@ -1,39 +1,33 @@
 import java.util.Scanner;
 import static java.lang.Math.abs;
 
-public class Main
+public class Rownoleglobok
 {
-    public static void main (String[] args)
+    public static int parserInt(String number, int rangeBegin, int rangeEnd)
     {
-        /*boolean flag = false;
+        boolean flag = false;
+        int result = -101; //deklaracja tu ? z jaka wartością ? -101 bo nie mieści się w wymaganiach
 
-        while (flag == false) {
-            h1 = scanner.nextLine();
-            flag = true;
-            try {
-                height = Integer.parseInt (h1);
-            } catch(NumberFormatException e) {
-                System.out.println ("Podano niepoprawna wartosc");
+        try {
+            result = Integer.parseInt (number);
+        } catch(NumberFormatException e) {
+            System.out.println ("Podano nieliczbową wartosc");
+            flag = false;
+        }
+        if (flag == true) {
+            if (result < rangeBegin || result > rangeEnd) {
+                System.out.println("Podana wartosc jest za duza lub za mała");
                 flag = false;
             }
-            if (flag == true) {
-                if (height <=0 || height > 250) {
-                    if (height <= 0) {
-                        System.out.println("Choinka nie może mieć tak mało wierszy");
-                    } else if (height > 250) {
-                        System.out.println("Ooo, takiej ogromnej choinki to chyba nawet Mikolaj nie widzial. Moze cos mniejszego ?");
-                    }
-                    flag = false;
-                }
-            }
-            if (flag == false) {
-                System.out.println("Wpisz ponownie ilosc wierszy choinki:");
-            }
-        }*/
-
-
-
-        System.out.println ("Podaj liczbe bokow rownolegloboku i kat: ");
+        }
+        if (flag == false) {
+            System.out.println("Wpisz ponownie ilosc wierszy choinki:");
+        }
+        return result;
+    }
+    public static void main (String[] args)
+    {
+        System.out.println ("Podaj dlugosci bokow rownolegloboku i kat: ");
         Scanner scanner = new Scanner(System.in);
         String str = scanner.nextLine(); //czy dlugosc str > 0
 
@@ -47,13 +41,16 @@ public class Main
             tabInt[i] = Integer.parseInt(tabString[i]);
             //System.out.println("Liczby: " + tabString[i]);
         }*/
+        System.out.println("rozmiar tablicy: " + tabString.length);
 
         int width, height, angle; //szerokosc, wysokosc i kat rownolegloboku
-        width = Integer.parseInt(tabString[0]);
+        //width = Integer.parseInt(tabString[0]);
         height = Integer.parseInt(tabString[1]);
         angle = Integer.parseInt(tabString[2]);
+        width = parserInt(tabString[0]);
 
         //---------------------------------------------------------------klasa rownoleglobok
+        System.out.println(width + " - szerokosc\n" + height + " - wysokosc");
         System.out.println(width + " " + height + " " + angle);
 
         String verse = "";
@@ -116,6 +113,6 @@ kąt nachylenia - slope angle
 wiersz         - verse
 
 zrobić funkcję która sprawdza czy się sparsowało do inta, jako parametr funkcji - zakres intów
-sprawdzać czy tabStringów = 3
+sprawdzać czy tabStringów >= 3
 czy
 */
