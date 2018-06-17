@@ -12,17 +12,19 @@ public class Rownoleglobok
             result = Integer.parseInt (number);
         } catch(NumberFormatException e) {
             System.out.println ("Podano nieliczbową wartosc");
+            System.exit(0);
             flag = false;
         }
         if (flag == true) {
             if (result < rangeBegin || result > rangeEnd) {
                 System.out.println("Podana wartosc jest za duza lub za mała");
+                System.exit(0);
                 flag = false;
             }
         }
         if (flag == false) {
             System.out.println("Nic");
-            return 101;
+            System.exit(0);
         }
         return result;
     }
@@ -43,6 +45,12 @@ public class Rownoleglobok
             //System.out.println("Liczby: " + tabString[i]);
         }*/
         System.out.println("rozmiar tablicy: " + tabString.length);
+
+        if (tabString.length != 3)
+        {
+            System.out.println("Za dużo elementów");
+            System.exit(0);
+        }
 
         int width, height, angle; //szerokosc, wysokosc i kat rownolegloboku
         /*width = Integer.parseInt(tabString[0]);
