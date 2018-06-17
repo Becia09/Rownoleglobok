@@ -88,7 +88,7 @@ public class Rownoleglobok
             else //angle < 0
             {
                 String allSpace = space;
-                for (int i = 0; i < height; i++)
+                for (int i = 0; i < height - 2; i++)
                 {
                     allSpace += space;
                 }
@@ -97,7 +97,7 @@ public class Rownoleglobok
                 for (int i = 0; i < height; i++)
                 {
                     System.out.println(verse);
-                    verse = verse.substring(angle);
+                    verse = verse.substring(abs(angle));
                 }
                 //System.out.println(verse + "\n"); //ostatnia linijka poza petla bo ze znakiem konca linii
             }
@@ -112,8 +112,4 @@ szerokosc      - width
 wysokosc       - height
 kąt nachylenia - slope angle
 wiersz         - verse
-
-zrobić funkcję która sprawdza czy się sparsowało do inta, jako parametr funkcji - zakres intów
-sprawdzać czy tabStringów >= 3
-czy
 */
