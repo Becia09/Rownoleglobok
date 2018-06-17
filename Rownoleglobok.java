@@ -5,8 +5,8 @@ public class Rownoleglobok
 {
     public static int parserInt(String number, int rangeBegin, int rangeEnd)
     {
-        boolean flag = false;
-        int result = -101; //deklaracja tu ? z jaka wartością ? -101 bo nie mieści się w wymaganiach
+        boolean flag = true;
+        int result = 101; //deklaracja tu ? z jaka wartością ? 101 bo nie mieści się w wymaganiach
 
         try {
             result = Integer.parseInt (number);
@@ -21,7 +21,8 @@ public class Rownoleglobok
             }
         }
         if (flag == false) {
-            System.out.println("Wpisz ponownie ilosc wierszy choinki:");
+            System.out.println("Nic");
+            return 101;
         }
         return result;
     }
@@ -44,10 +45,18 @@ public class Rownoleglobok
         System.out.println("rozmiar tablicy: " + tabString.length);
 
         int width, height, angle; //szerokosc, wysokosc i kat rownolegloboku
-        //width = Integer.parseInt(tabString[0]);
+        /*width = Integer.parseInt(tabString[0]);
         height = Integer.parseInt(tabString[1]);
-        angle = Integer.parseInt(tabString[2]);
-        width = parserInt(tabString[0]);
+        angle = Integer.parseInt(tabString[2]);*/
+
+        width = parserInt(tabString[0], 1, 100);
+        height = parserInt(tabString[1], 1, 100);
+        angle = parserInt(tabString[2], -100, 100);
+
+        if (width == 101 || height == 101 || angle == 101)
+        {
+            System.exit(0);
+        }
 
         //---------------------------------------------------------------klasa rownoleglobok
         System.out.println(width + " - szerokosc\n" + height + " - wysokosc");
