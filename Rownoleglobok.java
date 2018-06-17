@@ -33,29 +33,21 @@ public class Rownoleglobok
         System.out.println ("Podaj dlugosci bokow rownolegloboku i kat: ");
         Scanner scanner = new Scanner(System.in);
         String str = scanner.nextLine(); //czy dlugosc str > 0
+        System.out.println("wczytano: " + str + ".");
+        System.out.println("dlugosc str: " + str.length());
 
         //String tabString[] = new String[3]; //czy są 3 elementy ?
         String tabString[] = str.split(" ");
-        //String actualValue[] = str.split(" "); - czemu nie tak, tylko jak wyzej (dynamicznie czy statycznie) ?
 
-        /*int tabInt[] = new int[3]; - tablica intow latwiejsza, ale malo mowi bez nazw poszczegolnych wartosci
-        for (int i = 0; i < tabString.length; i++)
-        {
-            tabInt[i] = Integer.parseInt(tabString[i]);
-            //System.out.println("Liczby: " + tabString[i]);
-        }*/
         System.out.println("rozmiar tablicy: " + tabString.length);
 
         if (tabString.length != 3)
         {
-            System.out.println("Za dużo elementów");
+            System.out.println("Niewlasciwa ilosc elementów");
             System.exit(0);
         }
 
         int width, height, angle; //szerokosc, wysokosc i kat rownolegloboku
-        /*width = Integer.parseInt(tabString[0]);
-        height = Integer.parseInt(tabString[1]);
-        angle = Integer.parseInt(tabString[2]);*/
 
         width = parserInt(tabString[0], 1, 100);
         height = parserInt(tabString[1], 1, 100);
